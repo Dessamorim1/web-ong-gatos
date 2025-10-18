@@ -1,0 +1,391 @@
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.sobre-nos-section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+/*1. Etilização do título Quem somos*/
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-text {
+    order: 1;
+}
+
+.hero-image {
+    order: 2;
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-elegant);
+}
+
+/*2. Estilização do conteúdo Missão e Equipe*/
+.team {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--background);
+}
+
+.equipe-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0 auto;
+    max-width: var(--container-max-width);
+}
+
+.team-mission {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.team-mission-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.team-mission-phrase {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: hsl(0, 0%, 25%);
+    line-height: 1.4;
+    border-left: 5px solid var(--primary-light);
+    padding-left: 1rem;
+}
+
+.team-members {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.team-member {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease;
+    width: calc(50% - 1rem);
+    max-width: 300px;
+
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 0 15px 5px var(--primary-color);
+}
+
+.team-member-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 0 6px var(--primary-light);
+}
+
+.team-member-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.team-member-role {
+    font-size: 1rem;
+    color: var(--text-muted);
+    flex-grow: 1;
+}
+
+/*4. Estilização do título Apoie a causa*/
+
+.associate {
+    padding: 5rem 0;
+    background-color: var(--background);
+    color: white;
+    text-align: left;
+}
+
+.associate-tittle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #000000;
+}
+
+.associate-content {
+    display: flex;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    gap: 3rem;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.associate-left {
+    flex: 1;
+    padding-right: 1.5rem;
+    text-align: left;
+}
+
+.associate-description {
+    font-size: 1.125rem;
+    color: hsl(0, 0%, 0%);
+    line-height: 1.6;
+}
+
+.associate-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+}
+
+.associate-subtitle {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: hsl(0, 0%, 8%);
+    margin-bottom: 2rem;
+}
+
+.associate .btn-primary {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .sobre-nos-section {
+        padding: 3rem 1rem;
+    }
+
+    /* 1. SEÇÃO QUEM SOMOS (Inverte a ordem para Imagem no topo) */
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+    }
+
+    .hero-img {
+        height: auto;
+        max-height: 300px;
+    }
+
+
+    /* 2. SEÇÃO NOSSA EQUIPE */
+    .equipe-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .team-members {
+        order: 1;
+        justify-content: center;
+    }
+
+    .team-mission {
+        order: 2;
+        align-items: center;
+    }
+
+    .team-mission-title {
+        font-size: 1.8rem;
+    }
+
+    .team-mission-phrase {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+        padding-top: 0.5rem;
+    }
+
+    .team-member {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 350px;
+    }
+
+    .team-member-role {
+        text-align: center;
+    }
+
+
+    /* 4. SEÇÃO APOIE A CAUSA (Transforma o layout em vertical) */
+    .associate-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .associate-left {
+        order: 1;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .associate-tittle {
+        margin-bottom: 1rem;
+    }
+
+    .associate-right {
+        order: 2;
+        padding: 1.5rem;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .team-mission-title,
+    .associate-tittle {
+        font-size: 1.75rem;
+    }
+
+    .team-member-img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.page-header {
+    background-color: #fce7f3;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Filtros */
+.filters-section {
+    padding: 2rem 0;
+}
+
+.filters-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #ec4899;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.filter-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #ec4899;
+}

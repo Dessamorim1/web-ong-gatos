@@ -1,0 +1,311 @@
+body {
+    background-color: #e9ecef;
+}
+
+.container-adm-dash {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.admin-main {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* centraliza verticalmente */
+    align-items: center;
+    /* centraliza horizontalmente */
+    min-height: 100vh;
+    /* altura mínima = altura da tela */
+    background-color: #e9ecef;
+}
+
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* cada card mínimo de 250px */
+    gap: 30px;
+    justify-content: center;
+    /* centraliza os cards dentro do grid */
+    width: 100%;
+    max-width: 1000px;
+    /* opcional, limita o tamanho do grid */
+}
+
+
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.dashboard-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dashboard-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.dashboard-card .btn {
+    width: 100%;
+    padding: 12px;
+}
+
+/* Estilo específico para o botão de sair */
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.admin-form-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    border-top: 5px solid var(--color-primary, #6a0dad);
+    /* Linha de destaque */
+}
+
+.admin-form-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.admin-form-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.admin-form-section input[type="text"],
+.admin-form-section input[type="number"],
+.admin-form-section select,
+.admin-form-section textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.admin-form-section input:focus,
+.admin-form-section select:focus,
+.admin-form-section textarea:focus {
+    border-color: var(--color-primary, #6a0dad);
+    outline: none;
+}
+
+.admin-form-section textarea {
+    resize: vertical;
+}
+
+.admin-form-section input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+#pet-submit-btn,
+#pet-cancel-btn {
+    padding: 12px 20px;
+    font-weight: 600;
+    margin-right: 15px;
+    min-width: 150px;
+}
+
+.admin-list-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.admin-pet-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-pet-table th,
+.admin-pet-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.admin-pet-table thead {
+    background-color: var(--color-primary-light, #f0e6ff);
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.admin-pet-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-pet-table tbody tr:hover {
+    background-color: #f3f3f3;
+    transition: background-color 0.2s;
+}
+
+.admin-pet-table td:last-child {
+    white-space: nowrap;
+}
+
+.admin-pet-table .btn-small {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn {
+
+    display: inline-block;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #ccc;
+}
+
+.btn-dashboard-voltar {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    font-weight: 600;
+    box-shadow: var(--shadow-elegant);
+}
+
+.btn-dashboard-voltar:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-pink);
+    background-color: hsl(0, 0%, 25%);
+}
+
+.exit-card .btn {
+    background-color: #dc3545;
+    color: white;
+    font-weight: 600;
+}
+
+.exit-card .btn:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.4);
+}
+
+.btn-edit {
+    background-color: #6a0dad;
+    /* Roxo primário */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-edit:hover {
+    background-color: #5a0099;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}
+
+.btn-edit {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-edit:hover {
+    background-color: #5a0099;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
