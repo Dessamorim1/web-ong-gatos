@@ -260,22 +260,61 @@ function alterarStatus(id, novoStatus) {
     });
 }
 
-function filterTable() {
+document.addEventListener("DOMContentLoaded", () => {
     const input = document.getElementById("searchInput");
-    const filter = input.value.toLowerCase();
     const table = document.getElementById("adotantesTable");
-    const trs = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < trs.length; i++) { // começa de 1 pra pular o header
-        const tds = trs[i].getElementsByTagName("td");
-        let found = false;
-        for (let j = 0; j < tds.length - 1; j++) { // -1 pra ignorar a coluna de ações
-            if (tds[j].textContent.toLowerCase().includes(filter)) {
-                found = true;
-                break;
-            }
-        }
-        trs[i].style.display = found ? "" : "none";
+    if (!input || !table) {
+        console.warn("Tabela ou campo de busca não encontrados.");
+        return;
     }
-}
 
+    const tbody = table.querySelector("tbody");
+    if (!tbody) {
+        console.warn("Nenhum tbody encontrado na tabela.");
+        return;
+    }
+
+    // Função principal de filtro
+    function filterTable() {
+        const filter = input.value.trim().toLowerCase();
+        const rows = tbody.querySelectorAll("tr");
+        let algumVisivel = false;
+
+        // Se não houver linhas, nada a filtrar
+        if (rows.length === 0) return;
+
+        rows.forEach(row => {
+            // Ignora linha de "nenhum resultado"
+            if (row.id === "noResultsRow") return;
+
+            const text = row.textContent.toLowerCase();
+            const match = text.includes(filter);
+            row.style.display = match ? "" : "none";
+            if (match) algumVisivel = true;
+        });
+
+        // Gerenciar linha de "nenhum resultado"
+        let noResultsRow = document.getElementById("noResultsRow");
+
+        if (!algumVisivel) {
+            if (!noResultsRow) {
+                noResultsRow = document.createElement("tr");
+                noResultsRow.id = "noResultsRow";
+                noResultsRow.innerHTML = `
+                    <td colspan="7" style="text-align:center; padding:15px; color:#555;">
+                        Nenhuma solicitação encontrada.
+                    </td>`;
+                tbody.appendChild(noResultsRow);
+            }
+        } else if (noResultsRow) {
+            noResultsRow.remove();
+        }
+    }
+
+    // Escuta o evento de digitação
+    input.addEventListener("input", filterTable);
+
+    // Executa uma vez ao carregar (garante que tudo apareça)
+    filterTable();
+});
