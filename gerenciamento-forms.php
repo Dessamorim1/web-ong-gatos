@@ -30,8 +30,8 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo - Lar Bola de Pelos</title>
-    <link rel="stylesheet" href=" assets/css/admin-form.css">
-    <link rel="stylesheet" href=" assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/admin-form.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -101,7 +101,7 @@ $result = $conn->query($sql);
                             <path d="m21 21-4.35-4.35"></path>
                         </svg>
                         <input type="text" id="searchInput" class="search-input"
-                            placeholder="Buscar por nome, email ou gato..." onkeyup="filterTable()">
+                            placeholder="Buscar por nome, email ou gato...">
                     </div>
                 </div>
 
