@@ -14,4 +14,5 @@ Projeto de site para uma ONG de gatos, desenvolvido com **HTML, CSS, JavaScript,
 ---
 ## Index HTML
 
-<img width="1889" height="913" alt="image" src="https://github.com/user-attachments/assets/185eda3b-2592-4637-95a6-5220b7fd35ba" />
+<img width="1887" height="833" alt="image" src="https://github.com/user-attachments/assets/dc5aac9a-183e-4a6a-bfaf-2decb77a04c4" />
+
